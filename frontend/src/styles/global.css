@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Space+Mono:wght@400;700&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --font-body: 'Syne', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+  --sidebar-w: 220px;
+  --topbar-h:  56px;
+  --r-sm:      8px;
+  --r-md:      10px;
+  --r-lg:      14px;
+  --t:         0.15s ease;
+}
+
+/* ── Dark theme (default) ─────────────────────────── */
+[data-theme="dark"] {
+  --bg-base:          #09090f;
+  --bg-surface:       #111118;
+  --bg-surface-2:     #18181f;
+  --bg-hover:         rgba(255, 255, 255, 0.05);
+  --border:           rgba(255, 255, 255, 0.08);
+  --text-primary:     #e8e8f0;
+  --text-muted:       #6b6b8a;
+  --text-faint:       #3a3a52;
+  --accent:           #7c6cfa;
+  --accent-dim:       rgba(124, 108, 250, 0.15);
+  --accent-pink:      #fa6c9f;
+  --accent-green:     #4ade80;
+  --accent-green-dim: rgba(74, 222, 128, 0.12);
+}
+
+/* ── Light theme ──────────────────────────────────── */
+[data-theme="light"] {
+  --bg-base:          #f0f0f6;
+  --bg-surface:       #ffffff;
+  --bg-surface-2:     #f4f4f9;
+  --bg-hover:         rgba(0, 0, 0, 0.04);
+  --border:           rgba(0, 0, 0, 0.1);
+  --text-primary:     #111118;
+  --text-muted:       #5a5a78;
+  --text-faint:       #c0c0d0;
+  --accent:           #6454e0;
+  --accent-dim:       rgba(100, 84, 224, 0.12);
+  --accent-pink:      #e0549f;
+  --accent-green:     #16a34a;
+  --accent-green-dim: rgba(22, 163, 74, 0.1);
+}
+
+/* ── Base styles ──────────────────────────────────── */
+html, body, #root {
+  height: 100%;
+  font-family: var(--font-body);
+  background: var(--bg-base);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+button { font-family: var(--font-body); }
+a      { color: inherit; }
+
+/* ── Scrollbar ────────────────────────────────────── */
+::-webkit-scrollbar       { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+/* ── Animations ───────────────────────────────────── */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { transform: translateY(16px); opacity: 0; }
+  to   { transform: none; opacity: 1; }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.5; }
+}

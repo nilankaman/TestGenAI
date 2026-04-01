@@ -1,0 +1,69 @@
+# GENERAL / OS
+.DS_Store
+Thumbs.db
+*.log
+
+# IDEs / Editors
+.vscode/
+.idea/
+*.iml
+
+# NODE / FRONTEND (React / Vite)
+# Dependencies
+frontend/node_modules/
+
+# Build outputs
+frontend/dist/
+frontend/build/
+
+# Logs
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+
+# Environment variables
+frontend/.env*
+frontend/.vite/
+
+# JAVA / BACKEND (Spring Boot)
+# Compiled classes
+backend/target/
+backend/bin/
+backend/out/
+
+# Maven
+backend/.mvn/
+backend/logs/
+backend/*.log
+backend/dependency-reduced-pom.xml
+backend/buildNumber.properties
+
+# IDE files
+backend/.idea/
+backend/*.iml
+backend/.classpath
+backend/.project
+backend/.settings/
+
+# Spring Boot / packaged artifacts
+backend/*.jar
+backend/*.war
+backend/*.ear
+
+# Environment variables / secrets
+backend/.env*
+backend/src/main/resources/application-secrets.properties
+
+# DATABASE / OTHER
+*.h2.db
+*.sqlite
+*.db
+
+# TEMP / CACHE
+*.tmp
+*.swp
+*.bak
+*.orig
+
+# RAILWAY / DEPLOYMENT
+.railway/

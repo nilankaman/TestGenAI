@@ -1,0 +1,5 @@
+{
+  "nav": { "home": "홈", "dashboard": "대시보드", "generate": "생성", "chat": "AI 채팅", "team": "팀", "projects": "프로젝트", "history": "기록", "search": "검색", "plan": "플랜", "settings": "설정" },
+  "generate": { "title": "테스트 케이스 생성", "placeholder": "테스트할 기능을 설명하세요...", "framework": "프레임워크", "coverage": "커버리지", "format": "형식", "generate": "생성하기", "generating": "생성 중..." },
+  "common": { "save": "저장", "cancel": "취소", "delete": "삭제", "close": "닫기", "loading": "로딩 중...", "error": "오류가 발생했습니다" }
+}

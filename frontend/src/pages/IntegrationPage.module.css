@@ -1,0 +1,290 @@
+.page {
+  padding: 28px 32px;
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Header ── */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.integrationLogo {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-pink, #f472b6));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0 0 4px;
+}
+
+.sub {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.headerRight { flex-shrink: 0; }
+
+.connectBtn {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s;
+}
+.connectBtn:hover { opacity: 0.85; transform: translateY(-1px); }
+
+.connectedBadge {
+  background: rgba(74,222,128,0.12);
+  border: 1px solid rgba(74,222,128,0.3);
+  color: #4ade80;
+  border-radius: 8px;
+  padding: 9px 16px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* ── Stats row ── */
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.statCard {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.statIcon  { font-size: 20px; }
+.statValue { font-size: 22px; font-weight: 800; color: var(--text-primary); }
+.statLabel { font-size: 11px; color: var(--text-muted); }
+
+/* ── Search ── */
+.searchRow { display: flex; }
+
+.searchInput {
+  width: 100%;
+  max-width: 420px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: var(--text-primary);
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+.searchInput:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+/* ── Table ── */
+.tableWrap {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.table thead tr {
+  background: var(--bg-base);
+  border-bottom: 1px solid var(--border);
+}
+
+.table th {
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.row { border-bottom: 1px solid var(--border); transition: background 0.12s; }
+.row:last-child { border-bottom: none; }
+.row:hover { background: var(--bg-hover, rgba(255,255,255,0.03)); }
+
+.table td { padding: 12px 16px; color: var(--text-primary); }
+
+.idCell    { font-family: var(--font-mono); font-size: 12px; color: var(--accent); white-space: nowrap; }
+.titleCell { max-width: 320px; }
+
+/* ── Pills ── */
+.pill {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.pill_red    { background: rgba(248,113,113,0.12); color: #f87171; }
+.pill_orange { background: rgba(251,146,60,0.12);  color: #fb923c; }
+.pill_yellow { background: rgba(250,204,21,0.12);  color: #facc15; }
+.pill_green  { background: rgba(74,222,128,0.12);  color: #4ade80; }
+.pill_blue   { background: rgba(96,165,250,0.12);  color: #60a5fa; }
+.pill_purple { background: rgba(167,139,250,0.12); color: #a78bfa; }
+.pill_gray   { background: rgba(156,163,175,0.12); color: #9ca3af; }
+
+/* ── Action button ── */
+.actionBtn {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 5px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.actionBtn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ── Confluence doc cards ── */
+.cardGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.docCard {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  transition: border-color 0.15s;
+}
+.docCard:hover { border-color: var(--accent); }
+
+.docIcon { font-size: 22px; flex-shrink: 0; }
+
+.docInfo { flex: 1; }
+
+.docTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 4px;
+}
+
+.docMeta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.spaceBadge {
+  background: rgba(99,102,241,0.12);
+  color: var(--accent);
+  border-radius: 4px;
+  padding: 2px 7px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* ── CI/CD pipeline cards ── */
+.pipelineList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pipelineCard {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  transition: border-color 0.15s;
+}
+.pipelineCard:hover { border-color: var(--accent); }
+
+.pipelineStatusIcon { font-size: 20px; flex-shrink: 0; }
+
+.pipelineInfo { flex: 1; }
+
+.pipelineName {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  margin: 0 0 4px;
+}
+
+.pipelineMeta {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.pipelineRight {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+/* ── Mock note ── */
+.mockNote {
+  font-size: 12px;
+  color: var(--text-muted);
+  background: var(--bg-surface);
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  padding: 10px 16px;
+  text-align: center;
+}

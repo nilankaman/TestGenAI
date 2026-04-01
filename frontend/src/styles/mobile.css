@@ -1,0 +1,90 @@
+@media (max-width: 768px) {
+
+  /* Generate page — stack left and right panels */
+  .page[data-page="generate"] {
+    flex-direction: column;
+  }
+
+  /* Topbar — hide text labels on small screens */
+  .actions .btnPrimary span,
+  .actions .btnGhost span {
+    display: none;
+  }
+
+  /* Stat strips — 2 columns instead of 4 */
+  .statsStrip {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Hero on homepage — single column */
+  .hero {
+    grid-template-columns: 1fr !important;
+    padding: 40px 20px !important;
+    min-height: auto !important;
+  }
+
+  /* Section padding reduce */
+  .section {
+    padding: 40px 20px !important;
+  }
+
+  /* Two-col sections stack */
+  .twoCol,
+  .scriptBanner {
+    flex-direction: column !important;
+  }
+
+  /* Modal full width */
+  .modal {
+    max-width: 100% !important;
+    margin: 0 8px !important;
+    border-radius: 14px !important;
+  }
+
+  /* Tables — horizontal scroll */
+  .tableWrap {
+    overflow-x: auto;
+  }
+
+  /* Chat floats — smaller and repositioned */
+  .fab {
+    width: 44px !important;
+    height: 44px !important;
+    font-size: 17px !important;
+  }
+
+  .panel {
+    width: calc(100vw - 24px) !important;
+    right: 12px !important;
+    left: 12px !important;
+  }
+
+  /* Profile grid — single column */
+  .inner[data-layout="profile"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Admin table — scrollable */
+  .table {
+    min-width: 600px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Topbar — hide status pill */
+  .statusPill {
+    display: none !important;
+  }
+
+  /* Action buttons in topbar — icon only */
+  .btnPrimary,
+  .btnGhost {
+    padding: 6px 10px !important;
+    font-size: 11px !important;
+  }
+
+  /* Terminal card in hero — hide on very small */
+  .heroRight {
+    display: none !important;
+  }
+}
