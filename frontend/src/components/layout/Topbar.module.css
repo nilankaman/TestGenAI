@@ -41,7 +41,11 @@
   background: var(--text-muted);
   border-radius: 2px;
   transform-origin: center;
-  transition: transform 0.22s ease, opacity 0.22s ease, width 0.22s ease, background 0.22s ease;
+  transition:
+    transform 0.22s ease,
+    opacity 0.22s ease,
+    width 0.22s ease,
+    background 0.22s ease;
 }
 
 .burger:hover .bLine {
@@ -49,9 +53,18 @@
 }
 
 /* X state when sidebar is open */
-.bTop { transform: translateY(7px) rotate(45deg);  background: var(--accent) !important; }
-.bMid { opacity: 0; width: 0; }
-.bBot { transform: translateY(-7px) rotate(-45deg); background: var(--accent) !important; }
+.bTop {
+  transform: translateY(7px) rotate(45deg);
+  background: var(--accent) !important;
+}
+.bMid {
+  opacity: 0;
+  width: 0;
+}
+.bBot {
+  transform: translateY(-7px) rotate(-45deg);
+  background: var(--accent) !important;
+}
 
 /*Brand*/
 .brand {
@@ -64,11 +77,24 @@
   margin-right: 4px;
 }
 
-.brandName   { font-size: 16px; font-weight: 800; color: var(--text-primary); }
-.brandAccent { font-size: 16px; font-weight: 800; color: var(--accent); }
+.brandName {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+.brandAccent {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--accent);
+}
 
 /* Action buttons*/
-.actions { display: flex; align-items: center; gap: 7px; flex: 1; }
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex: 1;
+}
 
 .btnPrimary {
   padding: 6px 14px;
@@ -80,7 +106,9 @@
   border: none;
   cursor: pointer;
   font-family: inherit;
-  transition: opacity 0.15s ease, transform 0.15s ease;
+  transition:
+    opacity 0.15s ease,
+    transform 0.15s ease;
 }
 
 .btnPrimary:hover {
@@ -98,7 +126,9 @@
   border: 1px solid var(--border);
   cursor: pointer;
   font-family: inherit;
-  transition: border-color 0.15s ease, color 0.15s ease;
+  transition:
+    border-color 0.15s ease,
+    color 0.15s ease;
 }
 
 .btnGhost:hover {
@@ -127,7 +157,10 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  transition: border-color 0.15s ease, background 0.15s ease, transform 0.15s ease;
+  transition:
+    border-color 0.15s ease,
+    background 0.15s ease,
+    transform 0.15s ease;
 }
 
 .themeBtn:hover {
@@ -159,7 +192,9 @@
 }
 
 /* Avatar + dropdown */
-.avatarWrap { position: relative; }
+.avatarWrap {
+  position: relative;
+}
 
 .avatar {
   width: 34px;
@@ -174,7 +209,9 @@
   color: #fff;
   cursor: pointer;
   border: 2px solid transparent;
-  transition: border-color 0.15s ease, transform 0.15s ease;
+  transition:
+    border-color 0.15s ease,
+    transform 0.15s ease;
 }
 
 .avatar:hover {
@@ -217,10 +254,24 @@
   color: #fff;
 }
 
-.dropName  { font-size: 13px; font-weight: 700; color: var(--text-primary); margin: 0; }
-.dropEmail { font-size: 11px; color: var(--text-muted); margin: 0; margin-top: 1px; }
+.dropName {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+.dropEmail {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin: 0;
+  margin-top: 1px;
+}
 
-.divider { height: 1px; background: var(--border); margin: 4px 0; }
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 4px 0;
+}
 
 .dropItem {
   display: flex;
@@ -237,7 +288,9 @@
   cursor: pointer;
   text-align: left;
   font-family: inherit;
-  transition: background 0.15s ease, color 0.15s ease;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
 }
 
 .dropItem:hover {
@@ -245,7 +298,9 @@
   color: var(--text-primary);
 }
 
-.dropRed { color: #f87171; }
+.dropRed {
+  color: #f87171;
+}
 .dropRed:hover {
   background: rgba(248, 113, 113, 0.1) !important;
   color: #f87171 !important;

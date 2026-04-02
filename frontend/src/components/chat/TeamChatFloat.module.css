@@ -2,29 +2,37 @@
   position: fixed;
   bottom: 28px;
   right: 96px;
-  width: 52px; height: 52px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
   background: linear-gradient(135deg, #3b82f6, #06b6d4);
   border: none;
   font-size: 20px;
   cursor: pointer;
-  box-shadow: 0 4px 20px rgba(59,130,246,0.4);
-  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
   z-index: 200;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.fab:hover { transform: scale(1.08); box-shadow: 0 6px 28px rgba(59,130,246,0.55); }
+.fab:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 28px rgba(59, 130, 246, 0.55);
+}
 
 .badge {
   position: absolute;
-  top: -3px; right: -3px;
+  top: -3px;
+  right: -3px;
   background: #f87171;
   color: #fff;
   font-size: 10px;
   font-weight: 800;
-  min-width: 18px; height: 18px;
+  min-width: 18px;
+  height: 18px;
   border-radius: 9px;
   display: flex;
   align-items: center;
@@ -38,11 +46,12 @@
   position: fixed;
   bottom: 92px;
   right: 88px;
-  width: 340px; height: 460px;
+  width: 340px;
+  height: 460px;
   background: var(--bg-surface);
   border: 1px solid var(--border);
   border-radius: 16px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
   z-index: 200;
@@ -60,15 +69,34 @@
   flex-shrink: 0;
 }
 
-.headerLeft { display: flex; align-items: center; gap: 8px; flex: 1; }
-.headerIcon { font-size: 20px; }
-.headerTitle { font-size: 13px; font-weight: 800; color: var(--text-primary); }
-.headerSub   { font-size: 10px; color: var(--accent-green); font-family: var(--font-mono); }
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+}
+.headerIcon {
+  font-size: 20px;
+}
+.headerTitle {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+.headerSub {
+  font-size: 10px;
+  color: var(--accent-green);
+  font-family: var(--font-mono);
+}
 
-.headerAvatars { display: flex; gap: 4px; }
+.headerAvatars {
+  display: flex;
+  gap: 4px;
+}
 
 .memberDot {
-  width: 26px; height: 26px;
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -79,15 +107,18 @@
 
 .onlineDot {
   position: absolute;
-  bottom: 0; right: 0;
-  width: 7px; height: 7px;
+  bottom: 0;
+  right: 0;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   background: var(--accent-green);
   border: 1.5px solid var(--bg-surface);
 }
 
 .closeBtn {
-  width: 26px; height: 26px;
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
   background: var(--bg-hover);
   border: none;
@@ -97,9 +128,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.13s, color 0.13s;
+  transition:
+    background 0.13s,
+    color 0.13s;
 }
-.closeBtn:hover { background: rgba(248,113,113,0.15); color: #f87171; }
+.closeBtn:hover {
+  background: rgba(248, 113, 113, 0.15);
+  color: #f87171;
+}
 
 .messages {
   flex: 1;
@@ -117,10 +153,13 @@
   align-items: flex-end;
   gap: 7px;
 }
-.msgRowMe { flex-direction: row-reverse; }
+.msgRowMe {
+  flex-direction: row-reverse;
+}
 
 .msgAvatar {
-  width: 26px; height: 26px;
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -158,7 +197,9 @@
   color: var(--text-primary);
   line-height: 1.45;
 }
-.bubbleMe .bubbleText { color: #fff; }
+.bubbleMe .bubbleText {
+  color: #fff;
+}
 
 .bubbleTime {
   font-size: 9px;
@@ -167,7 +208,9 @@
   font-family: var(--font-mono);
   text-align: right;
 }
-.bubbleMe .bubbleTime { color: rgba(255,255,255,0.6); }
+.bubbleMe .bubbleTime {
+  color: rgba(255, 255, 255, 0.6);
+}
 
 .inputArea {
   display: flex;
@@ -189,14 +232,19 @@
   outline: none;
   transition: border-color 0.15s;
 }
-.input:focus { border-color: #3b82f6; }
-.input::placeholder { color: var(--text-faint); }
+.input:focus {
+  border-color: #3b82f6;
+}
+.input::placeholder {
+  color: var(--text-faint);
+}
 
 .sendBtn {
-  width: 34px; height: 34px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
-  background: rgba(59,130,246,0.2);
-  border: 1px solid rgba(59,130,246,0.3);
+  background: rgba(59, 130, 246, 0.2);
+  border: 1px solid rgba(59, 130, 246, 0.3);
   color: #3b82f6;
   font-size: 13px;
   cursor: pointer;
@@ -211,7 +259,10 @@
   color: #fff;
   border-color: #3b82f6;
 }
-.sendBtn:disabled { opacity: 0.4; cursor: not-allowed; }
+.sendBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
 
 /* Add these to TeamChatFloat.module.css */
 
@@ -251,9 +302,25 @@
   text-align: center;
 }
 
-.stagedFileInfo { flex: 1; min-width: 0; }
-.stagedFileName { font-size: 12px; font-weight: 600; color: var(--text-primary); margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.stagedFileMeta { font-size: 10px; color: var(--text-muted); margin: 0; font-family: var(--font-mono); }
+.stagedFileInfo {
+  flex: 1;
+  min-width: 0;
+}
+.stagedFileName {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.stagedFileMeta {
+  font-size: 10px;
+  color: var(--text-muted);
+  margin: 0;
+  font-family: var(--font-mono);
+}
 
 .stagedRemove {
   width: 22px;
@@ -270,13 +337,16 @@
   flex-shrink: 0;
   transition: all 0.13s;
 }
-.stagedRemove:hover { background: rgba(248,113,113,0.15); color: #f87171; }
+.stagedRemove:hover {
+  background: rgba(248, 113, 113, 0.15);
+  color: #f87171;
+}
 
 /* File error message */
 .fileError {
   padding: 6px 12px;
-  background: rgba(248,113,113,0.08);
-  border-top: 1px solid rgba(248,113,113,0.2);
+  background: rgba(248, 113, 113, 0.08);
+  border-top: 1px solid rgba(248, 113, 113, 0.2);
   color: #f87171;
   font-size: 11px;
 }
@@ -288,10 +358,16 @@
   object-fit: cover;
   border-radius: 6px;
   flex-shrink: 0;
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 @keyframes slide-up {
-  from { opacity: 0; transform: translateY(6px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

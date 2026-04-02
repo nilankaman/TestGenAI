@@ -4,7 +4,9 @@
   margin: 0 auto;
 }
 
-.header { margin-bottom: 24px; }
+.header {
+  margin-bottom: 24px;
+}
 
 .title {
   font-size: 24px;
@@ -38,9 +40,13 @@
   cursor: pointer;
   border-bottom: 2px solid transparent;
   margin-bottom: -1px;
-  transition: color 0.15s, border-color 0.15s;
+  transition:
+    color 0.15s,
+    border-color 0.15s;
 }
-.tab:hover { color: var(--text-primary); }
+.tab:hover {
+  color: var(--text-primary);
+}
 .tabActive {
   color: var(--accent);
   border-bottom-color: var(--accent);
@@ -70,7 +76,9 @@
 }
 
 @media (max-width: 640px) {
-  .filtersRow { grid-template-columns: 1fr; }
+  .filtersRow {
+    grid-template-columns: 1fr;
+  }
 }
 
 .filterGroup {
@@ -87,7 +95,8 @@
   letter-spacing: 0.4px;
 }
 
-.input, .select {
+.input,
+.select {
   background: var(--bg-base);
   border: 1px solid var(--border);
   border-radius: 8px;
@@ -99,7 +108,8 @@
   box-sizing: border-box;
   transition: border-color 0.2s;
 }
-.input:focus, .select:focus {
+.input:focus,
+.select:focus {
   outline: none;
   border-color: var(--accent);
 }
@@ -145,7 +155,9 @@
   align-items: center;
   gap: 8px;
 }
-.empty span { font-size: 36px; }
+.empty span {
+  font-size: 36px;
+}
 
 /* ── Test case result cards ── */
 .cardList {
@@ -162,7 +174,9 @@
   background: var(--bg-surface);
   border: 1px solid var(--border);
   border-radius: 10px;
-  transition: border-color 0.15s, transform 0.1s;
+  transition:
+    border-color 0.15s,
+    transform 0.1s;
 }
 .resultCard:hover {
   border-color: var(--accent);
@@ -181,10 +195,18 @@
   border-radius: 50%;
   flex-shrink: 0;
 }
-.dot_green  { background: #4ade80; }
-.dot_red    { background: #f87171; }
-.dot_yellow { background: #facc15; }
-.dot_gray   { background: #6b7280; }
+.dot_green {
+  background: #4ade80;
+}
+.dot_red {
+  background: #f87171;
+}
+.dot_yellow {
+  background: #facc15;
+}
+.dot_gray {
+  background: #6b7280;
+}
 
 .resultTitle {
   font-size: 14px;
@@ -203,7 +225,7 @@
 }
 
 .badge {
-  background: rgba(99,102,241,0.12);
+  background: rgba(99, 102, 241, 0.12);
   color: var(--accent);
   border-radius: 4px;
   padding: 2px 7px;
@@ -211,7 +233,9 @@
   font-weight: 700;
 }
 
-.metaSep { opacity: 0.4; }
+.metaSep {
+  opacity: 0.4;
+}
 
 .statusPill {
   font-size: 11px;
@@ -220,10 +244,22 @@
   border-radius: 20px;
   flex-shrink: 0;
 }
-.pill_green  { background: rgba(74,222,128,0.12); color: #4ade80; }
-.pill_red    { background: rgba(248,113,113,0.12); color: #f87171; }
-.pill_yellow { background: rgba(250,204,21,0.12);  color: #facc15; }
-.pill_gray   { background: rgba(107,114,128,0.12); color: #9ca3af; }
+.pill_green {
+  background: rgba(74, 222, 128, 0.12);
+  color: #4ade80;
+}
+.pill_red {
+  background: rgba(248, 113, 113, 0.12);
+  color: #f87171;
+}
+.pill_yellow {
+  background: rgba(250, 204, 21, 0.12);
+  color: #facc15;
+}
+.pill_gray {
+  background: rgba(107, 114, 128, 0.12);
+  color: #9ca3af;
+}
 
 /* ── User cards ── */
 .userGrid {
@@ -242,7 +278,9 @@
   align-items: center;
   gap: 10px;
   text-align: center;
-  transition: border-color 0.15s, transform 0.1s;
+  transition:
+    border-color 0.15s,
+    transform 0.1s;
 }
 .userCard:hover {
   border-color: var(--accent);
@@ -253,7 +291,11 @@
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent), var(--accent-pink, #f472b6));
+  background: linear-gradient(
+    135deg,
+    var(--accent),
+    var(--accent-pink, #f472b6)
+  );
   display: flex;
   align-items: center;
   justify-content: center;
@@ -262,7 +304,11 @@
   color: #fff;
 }
 
-.userInfo { display: flex; flex-direction: column; gap: 3px; }
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
 
 .userName {
   font-size: 14px;
@@ -280,7 +326,7 @@
 .userRole {
   display: inline-block;
   margin-top: 4px;
-  background: rgba(99,102,241,0.12);
+  background: rgba(99, 102, 241, 0.12);
   color: var(--accent);
   border-radius: 4px;
   padding: 3px 9px;

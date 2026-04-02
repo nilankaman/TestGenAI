@@ -8,7 +8,11 @@
 .hero {
   display: flex;
   gap: 24px;
-  background: linear-gradient(135deg, var(--bg-surface) 0%, rgba(99,102,241,0.08) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--bg-surface) 0%,
+    rgba(99, 102, 241, 0.08) 100%
+  );
   border: 1px solid var(--border);
   border-radius: 18px;
   padding: 32px;
@@ -17,12 +21,18 @@
   position: relative;
 }
 .hero::before {
-  content: '';
+  content: "";
   position: absolute;
-  top: -60px; right: -60px;
-  width: 200px; height: 200px;
+  top: -60px;
+  right: -60px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(99,102,241,0.15), transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(99, 102, 241, 0.15),
+    transparent 70%
+  );
   pointer-events: none;
 }
 
@@ -37,8 +47,8 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: rgba(99,102,241,0.12);
-  border: 1px solid rgba(99,102,241,0.3);
+  background: rgba(99, 102, 241, 0.12);
+  border: 1px solid rgba(99, 102, 241, 0.3);
   color: var(--accent);
   font-size: 12px;
   font-weight: 700;
@@ -101,7 +111,9 @@
   min-width: 140px;
 }
 
-.factIcon { font-size: 18px; }
+.factIcon {
+  font-size: 18px;
+}
 
 .factValue {
   font-size: 13px;
@@ -125,12 +137,19 @@
 }
 
 @media (max-width: 768px) {
-  .grid { grid-template-columns: 1fr; }
-  .hero { flex-direction: column; }
-  .heroRight { display: none; }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .hero {
+    flex-direction: column;
+  }
+  .heroRight {
+    display: none;
+  }
 }
 
-.leftCol, .rightCol {
+.leftCol,
+.rightCol {
   display: flex;
   flex-direction: column;
   gap: 18px;
@@ -177,7 +196,11 @@
   width: 90px;
   height: 90px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent), var(--accent-pink, #f472b6));
+  background: linear-gradient(
+    135deg,
+    var(--accent),
+    var(--accent-pink, #f472b6)
+  );
   display: flex;
   align-items: center;
   justify-content: center;
@@ -189,8 +212,10 @@
 
 .avatarEditBtn {
   position: absolute;
-  bottom: 2px; right: 2px;
-  width: 28px; height: 28px;
+  bottom: 2px;
+  right: 2px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   background: var(--accent);
   border: 2px solid var(--bg-surface);
@@ -201,7 +226,9 @@
   justify-content: center;
   transition: transform 0.15s;
 }
-.avatarEditBtn:hover { transform: scale(1.1); }
+.avatarEditBtn:hover {
+  transform: scale(1.1);
+}
 
 .avatarName {
   font-size: 15px;
@@ -235,9 +262,21 @@
   gap: 10px;
 }
 
-.statIcon { font-size: 16px; width: 24px; text-align: center; }
-.statLabel { flex: 1; font-size: 12px; color: var(--text-muted); }
-.statValue { font-size: 13px; font-weight: 700; color: var(--text-primary); }
+.statIcon {
+  font-size: 16px;
+  width: 24px;
+  text-align: center;
+}
+.statLabel {
+  flex: 1;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.statValue {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
 
 /* ── Security card ── */
 .securityText {
@@ -250,8 +289,8 @@
 .changePassBtn {
   width: 100%;
   padding: 10px;
-  background: rgba(248,113,113,0.1);
-  border: 1px solid rgba(248,113,113,0.3);
+  background: rgba(248, 113, 113, 0.1);
+  border: 1px solid rgba(248, 113, 113, 0.3);
   border-radius: 8px;
   color: #f87171;
   font-size: 13px;
@@ -260,7 +299,7 @@
   transition: background 0.2s;
 }
 .changePassBtn:hover {
-  background: rgba(248,113,113,0.2);
+  background: rgba(248, 113, 113, 0.2);
 }
 
 /* ── Testing Pyramid Visual ── */
@@ -297,7 +336,9 @@
   color: #fff;
   transition: transform 0.2s;
 }
-.pyramidRow:hover { transform: scaleX(1.02); }
+.pyramidRow:hover {
+  transform: scaleX(1.02);
+}
 
 .pyramidRow[data-level="e2e"] {
   width: 30%;
@@ -341,7 +382,8 @@
   letter-spacing: 0.4px;
 }
 
-.input, .textarea {
+.input,
+.textarea {
   background: var(--bg-base);
   border: 1px solid var(--border);
   border-radius: 8px;
@@ -353,16 +395,26 @@
   box-sizing: border-box;
   transition: border-color 0.2s;
 }
-.input:focus, .textarea:focus {
+.input:focus,
+.textarea:focus {
   outline: none;
   border-color: var(--accent);
 }
 
-.textarea { resize: vertical; min-height: 90px; }
+.textarea {
+  resize: vertical;
+  min-height: 90px;
+}
 
-.inputDisabled { opacity: 0.45; cursor: not-allowed; }
+.inputDisabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
 
-.fieldHint { font-size: 11px; color: var(--text-muted); }
+.fieldHint {
+  font-size: 11px;
+  color: var(--text-muted);
+}
 
 .saveBtn {
   align-self: flex-start;
@@ -374,19 +426,35 @@
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  transition: opacity 0.2s, transform 0.15s;
+  transition:
+    opacity 0.2s,
+    transform 0.15s;
 }
-.saveBtn:hover:not(:disabled) { opacity: 0.85; transform: translateY(-1px); }
-.saveBtn:disabled { opacity: 0.5; cursor: not-allowed; }
+.saveBtn:hover:not(:disabled) {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+.saveBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
 
-.successMsg { font-size: 13px; color: var(--accent-green, #4ade80); margin: 0; }
-.errorMsg   { font-size: 13px; color: #f87171; margin: 0; }
+.successMsg {
+  font-size: 13px;
+  color: var(--accent-green, #4ade80);
+  margin: 0;
+}
+.errorMsg {
+  font-size: 13px;
+  color: #f87171;
+  margin: 0;
+}
 
 /* ── Modal ── */
 .modalOverlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.55);
+  background: rgba(0, 0, 0, 0.55);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -396,8 +464,12 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .modal {
@@ -407,13 +479,19 @@
   padding: 28px;
   width: 100%;
   max-width: 420px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
   animation: slideUp 0.2s ease;
 }
 
 @keyframes slideUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .modalHeader {
@@ -440,7 +518,9 @@
   border-radius: 6px;
   transition: background 0.15s;
 }
-.modalClose:hover { background: var(--bg-base); }
+.modalClose:hover {
+  background: var(--bg-base);
+}
 
 .modalActions {
   display: flex;
@@ -459,4 +539,6 @@
   cursor: pointer;
   transition: background 0.15s;
 }
-.cancelBtn:hover { background: var(--border); }
+.cancelBtn:hover {
+  background: var(--border);
+}

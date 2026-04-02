@@ -8,9 +8,23 @@
   padding: 40px;
   text-align: center;
 }
-.code  { font-size: 80px; font-weight: 800; color: var(--accent); font-family: var(--font-mono); opacity: 0.6; line-height: 1; }
-.title { font-size: 22px; font-weight: 800; color: var(--text-primary); }
-.sub   { font-size: 13px; color: var(--text-muted); }
+.code {
+  font-size: 80px;
+  font-weight: 800;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  opacity: 0.6;
+  line-height: 1;
+}
+.title {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+.sub {
+  font-size: 13px;
+  color: var(--text-muted);
+}
 .btn {
   margin-top: 16px;
   padding: 10px 24px;
@@ -23,4 +37,6 @@
   cursor: pointer;
   transition: opacity 0.15s;
 }
-.btn:hover { opacity: 0.88; }
+.btn:hover {
+  opacity: 0.88;
+}

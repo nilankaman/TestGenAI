@@ -14,7 +14,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
 }
 
 .fab:hover {
@@ -38,9 +40,12 @@
   z-index: 201;
   overflow: hidden;
   animation: slide-up 0.18s ease;
-  transition: width 0.22s ease, height 0.22s ease,
-              bottom 0.22s ease, right 0.22s ease,
-              border-radius 0.22s ease;
+  transition:
+    width 0.22s ease,
+    height 0.22s ease,
+    bottom 0.22s ease,
+    right 0.22s ease,
+    border-radius 0.22s ease;
 }
 
 /* Maximised panel — centred, larger */
@@ -73,9 +78,21 @@
   flex-shrink: 0;
 }
 
-.headIcon  { font-size: 20px; }
-.headTitle { font-size: 13px; font-weight: 800; color: var(--text-primary); margin: 0; }
-.headSub   { font-size: 10px; color: var(--text-muted); font-family: var(--font-mono); margin: 0; }
+.headIcon {
+  font-size: 20px;
+}
+.headTitle {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0;
+}
+.headSub {
+  font-size: 10px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  margin: 0;
+}
 
 /* Maximise button */
 .maxBtn {
@@ -91,7 +108,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.15s ease, color 0.15s ease;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
   flex-shrink: 0;
 }
 
@@ -114,7 +133,9 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  transition: background 0.15s ease, color 0.15s ease;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
 }
 
 .close:hover {
@@ -134,8 +155,14 @@
   scrollbar-color: var(--border) transparent;
 }
 
-.row     { display: flex; align-items: flex-end; gap: 7px; }
-.rowUser { flex-direction: row-reverse; }
+.row {
+  display: flex;
+  align-items: flex-end;
+  gap: 7px;
+}
+.rowUser {
+  flex-direction: row-reverse;
+}
 
 .botAvatar {
   width: 26px;
@@ -174,7 +201,9 @@
   margin: 0;
 }
 
-.bubbleUser .bubbleText { color: #fff; }
+.bubbleUser .bubbleText {
+  color: #fff;
+}
 
 .bubbleTime {
   font-size: 9px;
@@ -185,10 +214,16 @@
   margin-bottom: 0;
 }
 
-.bubbleUser .bubbleTime { color: rgba(255, 255, 255, 0.6); }
+.bubbleUser .bubbleTime {
+  color: rgba(255, 255, 255, 0.6);
+}
 
 /* Typing dots */
-.dots { display: flex; gap: 4px; padding: 4px 0; }
+.dots {
+  display: flex;
+  gap: 4px;
+  padding: 4px 0;
+}
 .dots span {
   width: 5px;
   height: 5px;
@@ -196,8 +231,12 @@
   background: var(--text-muted);
   animation: dot 1.2s ease-in-out infinite;
 }
-.dots span:nth-child(2) { animation-delay: 0.2s; }
-.dots span:nth-child(3) { animation-delay: 0.4s; }
+.dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
 
 /* Input area */
 .inputWrap {
@@ -221,8 +260,12 @@
   transition: border-color 0.15s ease;
 }
 
-.input:focus       { border-color: var(--accent); }
-.input::placeholder { color: var(--text-muted); }
+.input:focus {
+  border-color: var(--accent);
+}
+.input::placeholder {
+  color: var(--text-muted);
+}
 
 .send {
   width: 34px;
@@ -252,16 +295,34 @@
 }
 
 @keyframes dot {
-  0%, 80%, 100% { opacity: 0.2; transform: scale(0.8); }
-  40%           { opacity: 1;   transform: scale(1);   }
+  0%,
+  80%,
+  100% {
+    opacity: 0.2;
+    transform: scale(0.8);
+  }
+  40% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 @keyframes slide-up {
-  from { opacity: 0; transform: translateY(12px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes fade-in {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

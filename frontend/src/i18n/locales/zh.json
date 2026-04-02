@@ -1,5 +1,31 @@
 {
-  "nav": { "home": "首页", "dashboard": "仪表盘", "generate": "生成", "chat": "AI聊天", "team": "团队", "projects": "项目", "history": "历史", "search": "搜索", "plan": "套餐", "settings": "设置" },
-  "generate": { "title": "生成测试用例", "placeholder": "描述您要测试的功能...", "framework": "框架", "coverage": "覆盖率", "format": "格式", "generate": "生成", "generating": "生成中..." },
-  "common": { "save": "保存", "cancel": "取消", "delete": "删除", "close": "关闭", "loading": "加载中...", "error": "出错了" }
+  "nav": {
+    "home": "首页",
+    "dashboard": "仪表盘",
+    "generate": "生成",
+    "chat": "AI聊天",
+    "team": "团队",
+    "projects": "项目",
+    "history": "历史",
+    "search": "搜索",
+    "plan": "套餐",
+    "settings": "设置"
+  },
+  "generate": {
+    "title": "生成测试用例",
+    "placeholder": "描述您要测试的功能...",
+    "framework": "框架",
+    "coverage": "覆盖率",
+    "format": "格式",
+    "generate": "生成",
+    "generating": "生成中..."
+  },
+  "common": {
+    "save": "保存",
+    "cancel": "取消",
+    "delete": "删除",
+    "close": "关闭",
+    "loading": "加载中...",
+    "error": "出错了"
+  }
 }

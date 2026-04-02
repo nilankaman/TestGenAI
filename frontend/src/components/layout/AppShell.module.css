@@ -1,10 +1,10 @@
 .shell {
   display: flex;
-  flex-direction: row;        /* explicit — sidebar left, main right */
+  flex-direction: row; /* explicit — sidebar left, main right */
   min-height: 100vh;
   position: relative;
   z-index: 1;
-  overflow: hidden;           /* KEY FIX: clips sidebar when it slides out */
+  overflow: hidden; /* KEY FIX: clips sidebar when it slides out */
 }
 
 .main {
@@ -13,12 +13,12 @@
   flex-direction: column;
   min-height: 100vh;
   overflow: hidden;
-  min-width: 0;               /* prevents flex child from overflowing */
+  min-width: 0; /* prevents flex child from overflowing */
 }
 
 .content {
   flex: 1;
-  overflow-y: auto;           /* was overflow:hidden — pages couldn't scroll */
+  overflow-y: auto; /* was overflow:hidden — pages couldn't scroll */
   display: flex;
   flex-direction: column;
 }
@@ -78,6 +78,21 @@
   animation: fade-in 0.2s ease;
 }
 
-@keyframes o1 { to { transform: translate(60px, 40px); } }
-@keyframes o2 { to { transform: translate(-40px, -60px); } }
-@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes o1 {
+  to {
+    transform: translate(60px, 40px);
+  }
+}
+@keyframes o2 {
+  to {
+    transform: translate(-40px, -60px);
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

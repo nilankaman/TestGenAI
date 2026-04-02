@@ -1,5 +1,4 @@
 @media (max-width: 768px) {
-
   /* Generate page — stack left and right panels */
   .page[data-page="generate"] {
     flex-direction: column;

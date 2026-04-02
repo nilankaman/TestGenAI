@@ -14,17 +14,63 @@
   flex-wrap: wrap;
 }
 
-.headerLeft { display: flex; flex-direction: column; gap: 5px; }
+.headerLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
 
-.count { font-size: 17px; font-weight: 800; color: var(--text-primary); margin: 0; }
-.meta  { font-size: 11px; color: var(--text-muted); font-family: var(--font-mono); }
+.count {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0;
+}
+.meta {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
 
-.typePills { display: flex; gap: 6px; flex-wrap: wrap; }
-.pillGreen  { padding: 2px 9px; border-radius: 5px; font-size: 10px; font-weight: 700; background: rgba(74,222,128,0.12);  color: #4ade80;  border: 1px solid rgba(74,222,128,0.3);  font-family: var(--font-mono); }
-.pillRed    { padding: 2px 9px; border-radius: 5px; font-size: 10px; font-weight: 700; background: rgba(248,113,113,0.12); color: #f87171;  border: 1px solid rgba(248,113,113,0.3); font-family: var(--font-mono); }
-.pillOrange { padding: 2px 9px; border-radius: 5px; font-size: 10px; font-weight: 700; background: rgba(251,146,60,0.12);  color: #fb923c;  border: 1px solid rgba(251,146,60,0.3);  font-family: var(--font-mono); }
+.typePills {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.pillGreen {
+  padding: 2px 9px;
+  border-radius: 5px;
+  font-size: 10px;
+  font-weight: 700;
+  background: rgba(74, 222, 128, 0.12);
+  color: #4ade80;
+  border: 1px solid rgba(74, 222, 128, 0.3);
+  font-family: var(--font-mono);
+}
+.pillRed {
+  padding: 2px 9px;
+  border-radius: 5px;
+  font-size: 10px;
+  font-weight: 700;
+  background: rgba(248, 113, 113, 0.12);
+  color: #f87171;
+  border: 1px solid rgba(248, 113, 113, 0.3);
+  font-family: var(--font-mono);
+}
+.pillOrange {
+  padding: 2px 9px;
+  border-radius: 5px;
+  font-size: 10px;
+  font-weight: 700;
+  background: rgba(251, 146, 60, 0.12);
+  color: #fb923c;
+  border: 1px solid rgba(251, 146, 60, 0.3);
+  font-family: var(--font-mono);
+}
 
-.scoreWrap { flex-shrink: 0; }
+.scoreWrap {
+  flex-shrink: 0;
+}
 .scoreCircle {
   width: 72px;
   height: 72px;
@@ -35,12 +81,27 @@
   align-items: center;
   justify-content: center;
   gap: 0;
-  background: rgba(0,0,0,0.1);
+  background: rgba(0, 0, 0, 0.1);
 }
-.scoreNum { font-size: 16px; font-weight: 800; color: var(--color, var(--accent)); font-family: var(--font-mono); line-height: 1; }
-.scoreLbl { font-size: 9px; color: var(--text-muted); font-family: var(--font-mono); letter-spacing: 0.5px; }
+.scoreNum {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--color, var(--accent));
+  font-family: var(--font-mono);
+  line-height: 1;
+}
+.scoreLbl {
+  font-size: 9px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  letter-spacing: 0.5px;
+}
 
-.cards { display: flex; flex-direction: column; gap: 10px; }
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 
 .suggestions {
   background: var(--bg-surface);
@@ -48,9 +109,35 @@
   border-radius: 12px;
   padding: 16px;
 }
-.sugTitle { font-size: 13px; font-weight: 800; color: var(--text-primary); margin-bottom: 10px; }
-.sugList  { display: flex; flex-direction: column; gap: 10px; }
-.sugItem  { display: flex; gap: 10px; align-items: flex-start; }
-.sugIcon  { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
-.sugItemTitle { font-size: 12px; font-weight: 700; color: var(--text-primary); margin-bottom: 2px; }
-.sugItemDesc  { font-size: 11px; color: var(--text-muted); line-height: 1.5; }
+.sugTitle {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+.sugList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.sugItem {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+.sugIcon {
+  font-size: 16px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.sugItemTitle {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+.sugItemDesc {
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}

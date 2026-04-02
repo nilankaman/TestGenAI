@@ -25,7 +25,11 @@
   width: 52px;
   height: 52px;
   border-radius: 14px;
-  background: linear-gradient(135deg, var(--accent), var(--accent-pink, #f472b6));
+  background: linear-gradient(
+    135deg,
+    var(--accent),
+    var(--accent-pink, #f472b6)
+  );
   display: flex;
   align-items: center;
   justify-content: center;
@@ -46,7 +50,9 @@
   margin: 0;
 }
 
-.headerRight { flex-shrink: 0; }
+.headerRight {
+  flex-shrink: 0;
+}
 
 .connectBtn {
   background: var(--accent);
@@ -57,13 +63,18 @@
   font-size: 13px;
   font-weight: 700;
   cursor: pointer;
-  transition: opacity 0.2s, transform 0.15s;
+  transition:
+    opacity 0.2s,
+    transform 0.15s;
 }
-.connectBtn:hover { opacity: 0.85; transform: translateY(-1px); }
+.connectBtn:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
 
 .connectedBadge {
-  background: rgba(74,222,128,0.12);
-  border: 1px solid rgba(74,222,128,0.3);
+  background: rgba(74, 222, 128, 0.12);
+  border: 1px solid rgba(74, 222, 128, 0.3);
   color: #4ade80;
   border-radius: 8px;
   padding: 9px 16px;
@@ -88,12 +99,23 @@
   gap: 4px;
 }
 
-.statIcon  { font-size: 20px; }
-.statValue { font-size: 22px; font-weight: 800; color: var(--text-primary); }
-.statLabel { font-size: 11px; color: var(--text-muted); }
+.statIcon {
+  font-size: 20px;
+}
+.statValue {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+.statLabel {
+  font-size: 11px;
+  color: var(--text-muted);
+}
 
 /* ── Search ── */
-.searchRow { display: flex; }
+.searchRow {
+  display: flex;
+}
 
 .searchInput {
   width: 100%;
@@ -141,14 +163,31 @@
   letter-spacing: 0.5px;
 }
 
-.row { border-bottom: 1px solid var(--border); transition: background 0.12s; }
-.row:last-child { border-bottom: none; }
-.row:hover { background: var(--bg-hover, rgba(255,255,255,0.03)); }
+.row {
+  border-bottom: 1px solid var(--border);
+  transition: background 0.12s;
+}
+.row:last-child {
+  border-bottom: none;
+}
+.row:hover {
+  background: var(--bg-hover, rgba(255, 255, 255, 0.03));
+}
 
-.table td { padding: 12px 16px; color: var(--text-primary); }
+.table td {
+  padding: 12px 16px;
+  color: var(--text-primary);
+}
 
-.idCell    { font-family: var(--font-mono); font-size: 12px; color: var(--accent); white-space: nowrap; }
-.titleCell { max-width: 320px; }
+.idCell {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--accent);
+  white-space: nowrap;
+}
+.titleCell {
+  max-width: 320px;
+}
 
 /* ── Pills ── */
 .pill {
@@ -160,13 +199,34 @@
   white-space: nowrap;
 }
 
-.pill_red    { background: rgba(248,113,113,0.12); color: #f87171; }
-.pill_orange { background: rgba(251,146,60,0.12);  color: #fb923c; }
-.pill_yellow { background: rgba(250,204,21,0.12);  color: #facc15; }
-.pill_green  { background: rgba(74,222,128,0.12);  color: #4ade80; }
-.pill_blue   { background: rgba(96,165,250,0.12);  color: #60a5fa; }
-.pill_purple { background: rgba(167,139,250,0.12); color: #a78bfa; }
-.pill_gray   { background: rgba(156,163,175,0.12); color: #9ca3af; }
+.pill_red {
+  background: rgba(248, 113, 113, 0.12);
+  color: #f87171;
+}
+.pill_orange {
+  background: rgba(251, 146, 60, 0.12);
+  color: #fb923c;
+}
+.pill_yellow {
+  background: rgba(250, 204, 21, 0.12);
+  color: #facc15;
+}
+.pill_green {
+  background: rgba(74, 222, 128, 0.12);
+  color: #4ade80;
+}
+.pill_blue {
+  background: rgba(96, 165, 250, 0.12);
+  color: #60a5fa;
+}
+.pill_purple {
+  background: rgba(167, 139, 250, 0.12);
+  color: #a78bfa;
+}
+.pill_gray {
+  background: rgba(156, 163, 175, 0.12);
+  color: #9ca3af;
+}
 
 /* ── Action button ── */
 .actionBtn {
@@ -203,11 +263,18 @@
   border-radius: 10px;
   transition: border-color 0.15s;
 }
-.docCard:hover { border-color: var(--accent); }
+.docCard:hover {
+  border-color: var(--accent);
+}
 
-.docIcon { font-size: 22px; flex-shrink: 0; }
+.docIcon {
+  font-size: 22px;
+  flex-shrink: 0;
+}
 
-.docInfo { flex: 1; }
+.docInfo {
+  flex: 1;
+}
 
 .docTitle {
   font-size: 14px;
@@ -226,7 +293,7 @@
 }
 
 .spaceBadge {
-  background: rgba(99,102,241,0.12);
+  background: rgba(99, 102, 241, 0.12);
   color: var(--accent);
   border-radius: 4px;
   padding: 2px 7px;
@@ -251,11 +318,18 @@
   border-radius: 10px;
   transition: border-color 0.15s;
 }
-.pipelineCard:hover { border-color: var(--accent); }
+.pipelineCard:hover {
+  border-color: var(--accent);
+}
 
-.pipelineStatusIcon { font-size: 20px; flex-shrink: 0; }
+.pipelineStatusIcon {
+  font-size: 20px;
+  flex-shrink: 0;
+}
 
-.pipelineInfo { flex: 1; }
+.pipelineInfo {
+  flex: 1;
+}
 
 .pipelineName {
   font-size: 14px;

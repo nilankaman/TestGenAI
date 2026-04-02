@@ -1,20 +1,20 @@
-import React from 'react'
-import TestCaseCard from './TestCaseCard'
-import ExportBar    from '@/components/ui/ExportBar'
-import s from './TestCaseList.module.css'
+import React from "react";
+import TestCaseCard from "./TestCaseCard";
+import ExportBar from "@/components/ui/ExportBar";
+import s from "./TestCaseList.module.css";
 
-export default function TestCaseList({ results, project = 'My Project' }) {
-  if (!results || !results.testCases?.length) return null
+export default function TestCaseList({ results, project = "My Project" }) {
+  if (!results || !results.testCases?.length) return null;
 
-  const { testCases, framework, coverageScore, tokensUsed, suggestions } = results
+  const { testCases, framework, coverageScore, tokensUsed, suggestions } =
+    results;
 
-  const positive = testCases.filter(t => t.type === 'POSITIVE').length
-  const negative = testCases.filter(t => t.type === 'NEGATIVE').length
-  const edge     = testCases.filter(t => t.type === 'EDGE').length
+  const positive = testCases.filter((t) => t.type === "POSITIVE").length;
+  const negative = testCases.filter((t) => t.type === "NEGATIVE").length;
+  const edge = testCases.filter((t) => t.type === "EDGE").length;
 
   return (
     <div className={s.wrap} id="test-output">
-
       {/* Results header */}
       <div className={s.header}>
         <div className={s.headerLeft}>
@@ -24,15 +24,27 @@ export default function TestCaseList({ results, project = 'My Project' }) {
             {tokensUsed > 0 && ` · ${tokensUsed} tokens`}
           </p>
           <div className={s.typePills}>
-            {positive > 0 && <span className={s.pillGreen}> {positive} positive</span>}
-            {negative > 0 && <span className={s.pillRed}>✗ {negative} negative</span>}
-            {edge     > 0 && <span className={s.pillOrange}>◈ {edge} edge</span>}
+            {positive > 0 && (
+              <span className={s.pillGreen}> {positive} positive</span>
+            )}
+            {negative > 0 && (
+              <span className={s.pillRed}>✗ {negative} negative</span>
+            )}
+            {edge > 0 && <span className={s.pillOrange}>◈ {edge} edge</span>}
           </div>
         </div>
         <div className={s.scoreWrap}>
           <div
             className={s.scoreCircle}
-            style={{ '--pct': `${coverageScore}%`, '--color': coverageScore >= 80 ? '#4ade80' : coverageScore >= 60 ? '#fb923c' : '#f87171' }}
+            style={{
+              "--pct": `${coverageScore}%`,
+              "--color":
+                coverageScore >= 80
+                  ? "#4ade80"
+                  : coverageScore >= 60
+                    ? "#fb923c"
+                    : "#f87171",
+            }}
           >
             <span className={s.scoreNum}>{coverageScore}%</span>
             <span className={s.scoreLbl}>coverage</span>
@@ -55,7 +67,11 @@ export default function TestCaseList({ results, project = 'My Project' }) {
             {suggestions.map((sg, i) => (
               <div key={i} className={s.sugItem}>
                 <span className={s.sugIcon}>
-                  {sg.iconType === 'warn' ? '⚠️' : sg.iconType === 'success' ? '✅' : 'ℹ️'}
+                  {sg.iconType === "warn"
+                    ? "⚠️"
+                    : sg.iconType === "success"
+                      ? "✅"
+                      : "ℹ️"}
                 </span>
                 <div>
                   <p className={s.sugItemTitle}>{sg.title}</p>
@@ -67,7 +83,11 @@ export default function TestCaseList({ results, project = 'My Project' }) {
         </div>
       )}
 
-      <ExportBar testCases={testCases} project={project} framework={framework} />
+      <ExportBar
+        testCases={testCases}
+        project={project}
+        framework={framework}
+      />
     </div>
-  )
+  );
 }

@@ -1,5 +1,31 @@
 {
-  "nav": { "home": "होम", "dashboard": "डैशबोर्ड", "generate": "जेनरेट", "chat": "AI चैट", "team": "टीम", "projects": "प्रोजेक्ट", "history": "इतिहास", "search": "खोज", "plan": "प्लान", "settings": "सेटिंग्स" },
-  "generate": { "title": "टेस्ट केस जेनरेट करें", "placeholder": "जिस फीचर को टेस्ट करना है उसका विवरण दें...", "framework": "फ्रेमवर्क", "coverage": "कवरेज", "format": "फॉर्मेट", "generate": "जेनरेट करें", "generating": "जेनरेट हो रहा है..." },
-  "common": { "save": "सेव", "cancel": "रद्द करें", "delete": "हटाएं", "close": "बंद करें", "loading": "लोड हो रहा है...", "error": "कुछ गलत हुआ" }
+  "nav": {
+    "home": "होम",
+    "dashboard": "डैशबोर्ड",
+    "generate": "जेनरेट",
+    "chat": "AI चैट",
+    "team": "टीम",
+    "projects": "प्रोजेक्ट",
+    "history": "इतिहास",
+    "search": "खोज",
+    "plan": "प्लान",
+    "settings": "सेटिंग्स"
+  },
+  "generate": {
+    "title": "टेस्ट केस जेनरेट करें",
+    "placeholder": "जिस फीचर को टेस्ट करना है उसका विवरण दें...",
+    "framework": "फ्रेमवर्क",
+    "coverage": "कवरेज",
+    "format": "फॉर्मेट",
+    "generate": "जेनरेट करें",
+    "generating": "जेनरेट हो रहा है..."
+  },
+  "common": {
+    "save": "सेव",
+    "cancel": "रद्द करें",
+    "delete": "हटाएं",
+    "close": "बंद करें",
+    "loading": "लोड हो रहा है...",
+    "error": "कुछ गलत हुआ"
+  }
 }

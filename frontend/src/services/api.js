@@ -1,15 +1,15 @@
-const BASE = 'http://localhost:8081'
+const BASE = "http://localhost:8081";
 
 function getToken() {
-  return localStorage.getItem('tg-token') || ''
+  return localStorage.getItem("tg-token") || "";
 }
 
 function headers() {
-  const token = getToken()
+  const token = getToken();
   return {
-    'Content-Type': 'application/json',
+    "Content-Type": "application/json",
     ...(token ? { Authorization: `Bearer ${token}` } : {}),
-  }
+  };
 }
 
 async function request(method, path, body) {
@@ -17,20 +17,20 @@ async function request(method, path, body) {
     method,
     headers: headers(),
     ...(body ? { body: JSON.stringify(body) } : {}),
-  })
+  });
 
-  const data = await res.json().catch(() => ({}))
+  const data = await res.json().catch(() => ({}));
 
   if (!res.ok) {
-    const msg = data.message || `Request failed: ${res.status}`
-    throw new Error(msg)
+    const msg = data.message || `Request failed: ${res.status}`;
+    throw new Error(msg);
   }
 
-  return data
+  return data;
 }
 
 export const api = {
-  get:    (path)       => request('GET',    path),
-  post:   (path, body) => request('POST',   path, body),
-  delete: (path)       => request('DELETE', path),
-}
+  get: (path) => request("GET", path),
+  post: (path, body) => request("POST", path, body),
+  delete: (path) => request("DELETE", path),
+};

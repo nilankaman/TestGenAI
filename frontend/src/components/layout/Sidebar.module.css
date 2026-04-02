@@ -12,8 +12,8 @@
   z-index: 20;
   overflow: hidden;
   transition:
-    width    0.25s cubic-bezier(0.4, 0, 0.2, 1),
-    opacity  0.2s  ease;
+    width 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.2s ease;
 }
 
 .open {
@@ -42,7 +42,9 @@
   flex-shrink: 0;
   transition: background 0.15s;
 }
-.logo:hover { background: var(--bg-hover); }
+.logo:hover {
+  background: var(--bg-hover);
+}
 
 .logoIcon {
   width: 36px;
@@ -83,7 +85,9 @@
   overflow-y: auto;
   scrollbar-width: none;
 }
-.nav::-webkit-scrollbar { display: none; }
+.nav::-webkit-scrollbar {
+  display: none;
+}
 
 .label {
   font-size: 9px;
@@ -96,7 +100,9 @@
   white-space: nowrap;
   display: block;
 }
-.label:first-child { margin-top: 4px; }
+.label:first-child {
+  margin-top: 4px;
+}
 
 .list {
   list-style: none;
@@ -121,10 +127,15 @@
   background: none;
   border: none;
   cursor: pointer;
-  transition: background 0.13s, color 0.13s;
+  transition:
+    background 0.13s,
+    color 0.13s;
   white-space: nowrap;
 }
-.item:hover { background: var(--bg-hover); color: var(--text-primary); }
+.item:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
 
 .active {
   background: var(--accent-dim) !important;
@@ -179,14 +190,24 @@
   margin: 12px 2px 4px;
   padding: 12px;
   border-radius: 10px;
-  background: linear-gradient(135deg, rgba(124,108,250,0.1), rgba(96,165,250,0.06));
+  background: linear-gradient(
+    135deg,
+    rgba(124, 108, 250, 0.1),
+    rgba(96, 165, 250, 0.06)
+  );
   border: 1px solid rgba(124, 108, 250, 0.25);
   cursor: pointer;
-  transition: border-color 0.2s, background 0.2s;
+  transition:
+    border-color 0.2s,
+    background 0.2s;
 }
 .planCard:hover {
   border-color: rgba(124, 108, 250, 0.5);
-  background: linear-gradient(135deg, rgba(124,108,250,0.18), rgba(96,165,250,0.1));
+  background: linear-gradient(
+    135deg,
+    rgba(124, 108, 250, 0.18),
+    rgba(96, 165, 250, 0.1)
+  );
 }
 
 .planRow {
@@ -196,8 +217,17 @@
   margin-bottom: 4px;
 }
 
-.planName  { font-size: 12px; font-weight: 800; color: var(--text-primary); white-space: nowrap; }
-.planArrow { font-size: 12px; color: var(--accent); font-weight: 700; }
+.planName {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+.planArrow {
+  font-size: 12px;
+  color: var(--accent);
+  font-weight: 700;
+}
 
 .planDesc {
   font-size: 10px;
@@ -221,7 +251,10 @@
   transition: width 0.3s ease;
 }
 
-.planMeta { font-size: 9px; color: var(--text-muted); }
+.planMeta {
+  font-size: 9px;
+  color: var(--text-muted);
+}
 
 /* ── Language ─────────────────────────────────────────────── */
 .langWrap {
@@ -240,7 +273,11 @@
   display: block;
 }
 
-.langPills { display: flex; flex-wrap: wrap; gap: 5px; }
+.langPills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
 
 .pill {
   padding: 3px 8px;
@@ -254,7 +291,10 @@
   transition: all 0.13s;
   white-space: nowrap;
 }
-.pill:hover { border-color: var(--accent); color: var(--accent); }
+.pill:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
 
 .pillActive {
   background: var(--accent);

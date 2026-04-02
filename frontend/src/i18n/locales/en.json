@@ -1,31 +1,31 @@
 {
   "nav": {
-    "home":         "Home",
-    "dashboard":    "Dashboard",
-    "generate":     "Generate",
-    "chat":         "AI Chat",
-    "team":         "Team",
-    "projects":     "Projects",
-    "history":      "History",
-    "search":       "Search",
-    "plan":         "Plan",
-    "settings":     "Settings"
+    "home": "Home",
+    "dashboard": "Dashboard",
+    "generate": "Generate",
+    "chat": "AI Chat",
+    "team": "Team",
+    "projects": "Projects",
+    "history": "History",
+    "search": "Search",
+    "plan": "Plan",
+    "settings": "Settings"
   },
   "generate": {
-    "title":        "Generate Test Cases",
-    "placeholder":  "Describe the feature you want to test...",
-    "framework":    "Framework",
-    "coverage":     "Coverage",
-    "format":       "Format",
-    "generate":     "Generate",
-    "generating":   "Generating..."
+    "title": "Generate Test Cases",
+    "placeholder": "Describe the feature you want to test...",
+    "framework": "Framework",
+    "coverage": "Coverage",
+    "format": "Format",
+    "generate": "Generate",
+    "generating": "Generating..."
   },
   "common": {
-    "save":         "Save",
-    "cancel":       "Cancel",
-    "delete":       "Delete",
-    "close":        "Close",
-    "loading":      "Loading...",
-    "error":        "Something went wrong"
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "close": "Close",
+    "loading": "Loading...",
+    "error": "Something went wrong"
   }
 }

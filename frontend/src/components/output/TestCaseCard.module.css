@@ -8,7 +8,9 @@
   gap: 10px;
   transition: border-color var(--t);
 }
-.card:hover { border-color: rgba(124,108,250,0.3); }
+.card:hover {
+  border-color: rgba(124, 108, 250, 0.3);
+}
 
 .header {
   display: flex;
@@ -61,7 +63,9 @@
   color: var(--accent);
   font-family: var(--font-mono);
 }
-.methodIcon { font-size: 11px; }
+.methodIcon {
+  font-size: 11px;
+}
 
 .description {
   font-size: 13px;
@@ -85,9 +89,16 @@
   color: var(--text-muted);
   cursor: pointer;
   font-family: var(--font-mono);
-  transition: background var(--t), color var(--t), border-color var(--t);
+  transition:
+    background var(--t),
+    color var(--t),
+    border-color var(--t);
 }
-.toggleBtn:hover { background: var(--accent-dim); color: var(--accent); border-color: rgba(124,108,250,0.3); }
+.toggleBtn:hover {
+  background: var(--accent-dim);
+  color: var(--accent);
+  border-color: rgba(124, 108, 250, 0.3);
+}
 
 .codeWrap {
   position: relative;
@@ -109,7 +120,10 @@
   transition: all var(--t);
   z-index: 1;
 }
-.copyBtn:hover { border-color: var(--accent); color: var(--accent); }
+.copyBtn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
 
 .code {
   padding: 14px;

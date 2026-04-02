@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import s from './CiCdGeneratorPage.module.css'
+import React, { useState } from "react";
+import s from "./CiCdGeneratorPage.module.css";
 
 // Templates for each framework — written as a real developer would write them
 const TEMPLATES = {
@@ -16,7 +16,9 @@ jobs:
     runs-on: ubuntu-latest
 
     services:
-      ${opts.db ? `postgres:
+      ${
+        opts.db
+          ? `postgres:
         image: postgres:15
         env:
           POSTGRES_DB: testdb
@@ -24,7 +26,9 @@ jobs:
           POSTGRES_PASSWORD: testpass
         ports:
           - 5432:5432
-        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5` : ''}
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5`
+          : ""
+      }
 
     steps:
       - name: Checkout code
@@ -46,11 +50,11 @@ jobs:
         uses: browser-actions/setup-chrome@latest
 
       - name: Run Selenium tests
-        run: mvn test -Dtest=${opts.testClass || 'LoginTest,CheckoutTest'}
+        run: mvn test -Dtest=${opts.testClass || "LoginTest,CheckoutTest"}
         env:
           BASE_URL: \${{ secrets.BASE_URL }}
           HEADLESS: true
-          ${opts.db ? 'DB_URL: jdbc:postgresql://localhost:5432/testdb' : ''}
+          ${opts.db ? "DB_URL: jdbc:postgresql://localhost:5432/testdb" : ""}
 
       - name: Upload Surefire reports
         uses: actions/upload-artifact@v4
@@ -176,7 +180,7 @@ jobs:
           pip install pytest pytest-html pytest-cov
 
       - name: Run tests
-        run: pytest ${opts.testDir || 'tests/'} -v --html=report.html --cov=. --cov-report=xml
+        run: pytest ${opts.testDir || "tests/"} -v --html=report.html --cov=. --cov-report=xml
         env:
           BASE_URL: \${{ secrets.BASE_URL }}
           API_KEY:  \${{ secrets.API_KEY }}
@@ -269,41 +273,41 @@ jobs:
         with:
           name: api-test-reports
           path: target/surefire-reports/`,
-}
+};
 
 const FRAMEWORKS = [
-  { id: 'selenium',    label: 'Selenium',    lang: 'Java'   },
-  { id: 'cypress',     label: 'Cypress',     lang: 'JS'     },
-  { id: 'playwright',  label: 'Playwright',  lang: 'TS'     },
-  { id: 'pytest',      label: 'Pytest',      lang: 'Python' },
-  { id: 'junit5',      label: 'JUnit5',      lang: 'Java'   },
-  { id: 'restassured', label: 'RestAssured', lang: 'Java'   },
-]
+  { id: "selenium", label: "Selenium", lang: "Java" },
+  { id: "cypress", label: "Cypress", lang: "JS" },
+  { id: "playwright", label: "Playwright", lang: "TS" },
+  { id: "pytest", label: "Pytest", lang: "Python" },
+  { id: "junit5", label: "JUnit5", lang: "Java" },
+  { id: "restassured", label: "RestAssured", lang: "Java" },
+];
 
 export default function CiCdGeneratorPage() {
-  const [framework, setFramework] = useState('selenium')
-  const [port,      setPort]      = useState('3000')
-  const [testClass, setTestClass] = useState('')
-  const [testDir,   setTestDir]   = useState('tests/')
-  const [includeDb, setIncludeDb] = useState(false)
-  const [copied,    setCopied]    = useState(false)
+  const [framework, setFramework] = useState("selenium");
+  const [port, setPort] = useState("3000");
+  const [testClass, setTestClass] = useState("");
+  const [testDir, setTestDir] = useState("tests/");
+  const [includeDb, setIncludeDb] = useState(false);
+  const [copied, setCopied] = useState(false);
 
-  const opts = { port, testClass, testDir, db: includeDb }
-  const generator = TEMPLATES[framework]
-  const yaml = generator ? generator(opts) : ''
+  const opts = { port, testClass, testDir, db: includeDb };
+  const generator = TEMPLATES[framework];
+  const yaml = generator ? generator(opts) : "";
 
   function copy() {
-    navigator.clipboard.writeText(yaml)
-    setCopied(true)
-    setTimeout(() => setCopied(false), 2500)
+    navigator.clipboard.writeText(yaml);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2500);
   }
 
   function download() {
-    const blob = new Blob([yaml], { type: 'text/yaml' })
-    const link = document.createElement('a')
-    link.href     = URL.createObjectURL(blob)
-    link.download = `${framework}-tests.yml`
-    link.click()
+    const blob = new Blob([yaml], { type: "text/yaml" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = `${framework}-tests.yml`;
+    link.click();
   }
 
   return (
@@ -311,7 +315,9 @@ export default function CiCdGeneratorPage() {
       <div className={s.header}>
         <div>
           <h1 className={s.title}>GitHub Actions Generator</h1>
-          <p className={s.sub}>Generate a ready-to-use CI/CD workflow file for your test framework</p>
+          <p className={s.sub}>
+            Generate a ready-to-use CI/CD workflow file for your test framework
+          </p>
         </div>
         <div className={s.headerBadge}>🔄 CI/CD</div>
       </div>
@@ -322,10 +328,10 @@ export default function CiCdGeneratorPage() {
           <div className={s.section}>
             <label className={s.sectionLabel}>Framework</label>
             <div className={s.fwGrid}>
-              {FRAMEWORKS.map(fw => (
+              {FRAMEWORKS.map((fw) => (
                 <button
                   key={fw.id}
-                  className={`${s.fwBtn} ${framework === fw.id ? s.fwBtnOn : ''}`}
+                  className={`${s.fwBtn} ${framework === fw.id ? s.fwBtnOn : ""}`}
                   onClick={() => setFramework(fw.id)}
                 >
                   <span className={s.fwName}>{fw.label}</span>
@@ -335,56 +341,62 @@ export default function CiCdGeneratorPage() {
             </div>
           </div>
 
-          {(framework === 'cypress' || framework === 'playwright') && (
+          {(framework === "cypress" || framework === "playwright") && (
             <div className={s.section}>
               <label className={s.sectionLabel}>App port</label>
               <input
                 className={s.input}
                 value={port}
-                onChange={e => setPort(e.target.value)}
+                onChange={(e) => setPort(e.target.value)}
                 placeholder="3000"
               />
               <p className={s.hint}>Port your dev server runs on</p>
             </div>
           )}
 
-          {framework === 'selenium' && (
+          {framework === "selenium" && (
             <div className={s.section}>
               <label className={s.sectionLabel}>Test classes to run</label>
               <input
                 className={s.input}
                 value={testClass}
-                onChange={e => setTestClass(e.target.value)}
+                onChange={(e) => setTestClass(e.target.value)}
                 placeholder="LoginTest,CheckoutTest"
               />
               <p className={s.hint}>Comma-separated class names</p>
             </div>
           )}
 
-          {framework === 'pytest' && (
+          {framework === "pytest" && (
             <div className={s.section}>
               <label className={s.sectionLabel}>Test directory</label>
               <input
                 className={s.input}
                 value={testDir}
-                onChange={e => setTestDir(e.target.value)}
+                onChange={(e) => setTestDir(e.target.value)}
                 placeholder="tests/"
               />
             </div>
           )}
 
-          {(framework === 'selenium' || framework === 'junit5' || framework === 'restassured') && (
+          {(framework === "selenium" ||
+            framework === "junit5" ||
+            framework === "restassured") && (
             <div className={s.section}>
               <label className={s.checkboxRow}>
                 <input
                   type="checkbox"
                   checked={includeDb}
-                  onChange={e => setIncludeDb(e.target.checked)}
+                  onChange={(e) => setIncludeDb(e.target.checked)}
                   className={s.checkbox}
                 />
-                <span className={s.checkboxLabel}>Include PostgreSQL service</span>
+                <span className={s.checkboxLabel}>
+                  Include PostgreSQL service
+                </span>
               </label>
-              <p className={s.hint}>Adds a Postgres container for integration tests</p>
+              <p className={s.hint}>
+                Adds a Postgres container for integration tests
+              </p>
             </div>
           )}
 
@@ -392,10 +404,14 @@ export default function CiCdGeneratorPage() {
             <p className={s.howToTitle}>How to use this file</p>
             <ol className={s.steps}>
               <li>Download the YAML file below</li>
-              <li>Create <code>.github/workflows/</code> folder in your repo</li>
+              <li>
+                Create <code>.github/workflows/</code> folder in your repo
+              </li>
               <li>Drop the file inside that folder</li>
               <li>Commit and push — GitHub Actions runs automatically</li>
-              <li>Add your secrets in <code>Repo → Settings → Secrets</code></li>
+              <li>
+                Add your secrets in <code>Repo → Settings → Secrets</code>
+              </li>
             </ol>
           </div>
         </div>
@@ -405,11 +421,16 @@ export default function CiCdGeneratorPage() {
           <div className={s.outputHeader}>
             <div>
               <p className={s.outputTitle}>{framework}-tests.yml</p>
-              <p className={s.outputMeta}>{yaml.split('\n').length} lines · GitHub Actions workflow</p>
+              <p className={s.outputMeta}>
+                {yaml.split("\n").length} lines · GitHub Actions workflow
+              </p>
             </div>
             <div className={s.outputActions}>
-              <button className={`${s.copyBtn} ${copied ? s.copyBtnDone : ''}`} onClick={copy}>
-                {copied ? ' Copied' : '⎘ Copy'}
+              <button
+                className={`${s.copyBtn} ${copied ? s.copyBtnDone : ""}`}
+                onClick={copy}
+              >
+                {copied ? " Copied" : "⎘ Copy"}
               </button>
               <button className={s.downloadBtn} onClick={download}>
                 ⬇ Download
@@ -417,24 +438,32 @@ export default function CiCdGeneratorPage() {
             </div>
           </div>
 
-          <pre className={s.yaml}><code>{yaml}</code></pre>
+          <pre className={s.yaml}>
+            <code>{yaml}</code>
+          </pre>
 
           <div className={s.secretsNote}>
             <p className={s.secretsTitle}>Secrets to add in GitHub</p>
             <div className={s.secretsList}>
-              {framework === 'pytest' || framework === 'restassured'
-                ? ['BASE_URL', 'API_KEY', 'AUTH_TOKEN'].map(sec => (
-                    <span key={sec} className={s.secretTag}>{sec}</span>
+              {framework === "pytest" || framework === "restassured"
+                ? ["BASE_URL", "API_KEY", "AUTH_TOKEN"].map((sec) => (
+                    <span key={sec} className={s.secretTag}>
+                      {sec}
+                    </span>
                   ))
-                : ['BASE_URL'].map(sec => (
-                    <span key={sec} className={s.secretTag}>{sec}</span>
-                  ))
-              }
+                : ["BASE_URL"].map((sec) => (
+                    <span key={sec} className={s.secretTag}>
+                      {sec}
+                    </span>
+                  ))}
             </div>
-            <p className={s.secretsHint}>Go to your repo → Settings → Secrets and variables → Actions → New repository secret</p>
+            <p className={s.secretsHint}>
+              Go to your repo → Settings → Secrets and variables → Actions → New
+              repository secret
+            </p>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }

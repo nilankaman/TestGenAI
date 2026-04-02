@@ -1,18 +1,18 @@
-import React from 'react'
-import s from './FeatureForm.module.css'
+import React from "react";
+import s from "./FeatureForm.module.css";
 
 const FRAMEWORKS = [
-  { id: 'junit5',      label: 'JUnit5',      lang: 'Java'    },
-  { id: 'testng',      label: 'TestNG',       lang: 'Java'    },
-  { id: 'selenium',    label: 'Selenium',     lang: 'Java'    },
-  { id: 'appium',      label: 'Appium',       lang: 'Java'    },
-  { id: 'restassured', label: 'RestAssured',  lang: 'Java'    },
-  { id: 'cypress',     label: 'Cypress',      lang: 'JS'      },
-  { id: 'playwright',  label: 'Playwright',   lang: 'JS/TS'   },
-  { id: 'cucumber',    label: 'Cucumber/BDD', lang: 'BDD'     },
-  { id: 'pytest',      label: 'Pytest',       lang: 'Python'  },
-  { id: 'jest',        label: 'Jest',         lang: 'JS'      },
-]
+  { id: "junit5", label: "JUnit5", lang: "Java" },
+  { id: "testng", label: "TestNG", lang: "Java" },
+  { id: "selenium", label: "Selenium", lang: "Java" },
+  { id: "appium", label: "Appium", lang: "Java" },
+  { id: "restassured", label: "RestAssured", lang: "Java" },
+  { id: "cypress", label: "Cypress", lang: "JS" },
+  { id: "playwright", label: "Playwright", lang: "JS/TS" },
+  { id: "cucumber", label: "Cucumber/BDD", lang: "BDD" },
+  { id: "pytest", label: "Pytest", lang: "Python" },
+  { id: "jest", label: "Jest", lang: "JS" },
+];
 
 export default function FeatureForm({
   description,
@@ -27,7 +27,7 @@ export default function FeatureForm({
   loading,
   error,
   showFramework = true,
-  placeholder = 'e.g. User login with email and password...',
+  placeholder = "e.g. User login with email and password...",
 }) {
   return (
     <div className={s.form}>
@@ -36,7 +36,7 @@ export default function FeatureForm({
         <textarea
           className={s.textarea}
           value={description}
-          onChange={e => onDescChange(e.target.value)}
+          onChange={(e) => onDescChange(e.target.value)}
           placeholder={placeholder}
           rows={6}
         />
@@ -46,11 +46,11 @@ export default function FeatureForm({
         <div className={s.field}>
           <label className={s.label}>Framework</label>
           <div className={s.frameworks}>
-            {FRAMEWORKS.map(fw => (
+            {FRAMEWORKS.map((fw) => (
               <button
                 key={fw.id}
                 type="button"
-                className={`${s.fwBtn} ${framework === fw.id ? s.fwBtnOn : ''}`}
+                className={`${s.fwBtn} ${framework === fw.id ? s.fwBtnOn : ""}`}
                 onClick={() => onFrameworkChange(fw.id)}
               >
                 <span className={s.fwLabel}>{fw.label}</span>
@@ -64,7 +64,11 @@ export default function FeatureForm({
       <div className={s.row}>
         <div className={s.field}>
           <label className={s.label}>Coverage</label>
-          <select className={s.select} value={coverage} onChange={e => onCoverageChange(e.target.value)}>
+          <select
+            className={s.select}
+            value={coverage}
+            onChange={(e) => onCoverageChange(e.target.value)}
+          >
             <option value="ALL">All types</option>
             <option value="POSITIVE">Positive only</option>
             <option value="NEGATIVE">Negative only</option>
@@ -73,7 +77,11 @@ export default function FeatureForm({
         </div>
         <div className={s.field}>
           <label className={s.label}>Format</label>
-          <select className={s.select} value={format} onChange={e => onFormatChange(e.target.value)}>
+          <select
+            className={s.select}
+            value={format}
+            onChange={(e) => onFormatChange(e.target.value)}
+          >
             <option value="CODE">Code</option>
             <option value="GHERKIN">Gherkin</option>
             <option value="PLAIN">Plain text</option>
@@ -83,9 +91,20 @@ export default function FeatureForm({
 
       {error && <div className={s.error}>{error}</div>}
 
-      <button className={s.submitBtn} onClick={onSubmit} disabled={loading} type="button">
-        {loading ? <><span className={s.spinner} /> Generating…</> : '⚡ Generate test cases'}
+      <button
+        className={s.submitBtn}
+        onClick={onSubmit}
+        disabled={loading}
+        type="button"
+      >
+        {loading ? (
+          <>
+            <span className={s.spinner} /> Generating…
+          </>
+        ) : (
+          "⚡ Generate test cases"
+        )}
       </button>
     </div>
-  )
+  );
 }
