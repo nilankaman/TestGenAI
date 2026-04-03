@@ -93,7 +93,7 @@ export default function RegisterPage() {
           <span>or register with email</span>
         </div>
 
-        <form onSubmit={handleSubmit} className={styles.form}>
+        <form onSubmit={handleSubmit} className={styles.form} noValidate>
           {error && <div className={styles.errorMsg}>{error}</div>}
 
           <div className={styles.field}>
