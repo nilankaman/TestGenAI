@@ -142,7 +142,7 @@ export default function GeneratePage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           featureDescription: desc,
-          framework: tab === "auto" ? framework : "plain",
+          framework: tab === "automation" ? framework : "plain",
           outputFormat: tab === "manual" ? "PLAIN" : format,
           coverageType: coverage,
           uiLanguage: "en",
@@ -209,18 +209,21 @@ export default function GeneratePage() {
           <h1 className={s.title}>Generate Test Cases</h1>
           <div className={s.modeTabs}>
             <button
+              data-testid="tab-manual"
               className={`${s.modeTab} ${tab === "manual" ? s.modeTabOn : ""}`}
               onClick={() => setTab("manual")}
             >
               📋 Manual
             </button>
             <button
-              className={`${s.modeTab} ${tab === "auto" ? s.modeTabOn : ""}`}
-              onClick={() => setTab("auto")}
+              data-testid="tab-automation"
+              className={`${s.modeTab} ${tab === "automation" ? s.modeTabOn : ""}`}
+              onClick={() => setTab("automation")}
             >
               ⚙️ Automation
             </button>
             <button
+              data-testid="tab-script"
               className={`${s.modeTab} ${tab === "script" ? s.modeTabOn : ""}`}
               onClick={() => setTab("script")}
             >
@@ -248,7 +251,7 @@ export default function GeneratePage() {
           />
         </div>
 
-        {tab === "auto" && (
+        {tab === "automation" && (
           <div className={s.field}>
             <label className={s.lbl}>Framework</label>
             <div className={s.frameworks}>
@@ -299,7 +302,7 @@ export default function GeneratePage() {
                 <option value="EDGE">Edge cases</option>
               </select>
             </div>
-            {tab === "auto" && (
+            {tab === "automation" && (
               <div className={s.field}>
                 <label className={s.lbl}>Format</label>
                 <select
@@ -378,7 +381,7 @@ export default function GeneratePage() {
         {!results && !scriptCode && !isLoading && (
           <div className={s.empty}>
             <div className={s.emptyIcon}>
-              {tab === "manual" ? "📋" : tab === "auto" ? "⚙️" : "📝"}
+              {tab === "manual" ? "📋" : tab === "automation" ? "⚙️" : "📝"}
             </div>
             <p className={s.emptyTitle}>
               {tab === "script"
@@ -477,7 +480,7 @@ export default function GeneratePage() {
         )}
 
         {/* Automation results */}
-        {tab === "auto" && results && !loading && (
+        {tab === "automation" && results && !loading && (
           <div className={s.results}>
             <div className={s.resultsHeader}>
               <div>

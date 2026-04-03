@@ -263,6 +263,7 @@ export default function LoginPage() {
               <input
                 className={styles.input}
                 type="email"
+                name="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@example.com"
@@ -275,6 +276,7 @@ export default function LoginPage() {
               <input
                 className={styles.input}
                 type="password"
+                name="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
