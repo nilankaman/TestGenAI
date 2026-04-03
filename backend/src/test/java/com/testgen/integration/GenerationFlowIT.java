@@ -29,7 +29,6 @@ public class GenerationFlowIT {
     @MockBean
     private AiProvider aiProvider;
 
-    @SuppressWarnings("null")
     @Test
 void userShouldBeAbleToGenerateTestCases() throws Exception {
     String token = jwtUtil.generate(java.util.UUID.randomUUID(), "user@test.com");

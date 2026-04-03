@@ -12,8 +12,10 @@ import java.util.Date;
 import java.util.UUID;
 import java.util.function.BooleanSupplier;
 
+@SuppressWarnings("unused")
 @Component
-public class JwtUtil {
+public class JwtUtil 
+{
 
     @Value("${jwt.secret}")
     private String secret;
@@ -21,11 +23,13 @@ public class JwtUtil {
     @Value("${jwt.expiration-ms}")
     private long expirationMs;
 
-    private Key key() {
+    private Key key() 
+    {
         return Keys.hmacShaKeyFor(secret.getBytes(StandardCharsets.UTF_8));
     }
 
-    public String generate(UUID userId, String email) {
+    public String generate(UUID userId, String email) 
+    {
         return Jwts.builder()
             .setSubject(userId.toString())
             .claim("email", email)
@@ -35,27 +39,51 @@ public class JwtUtil {
             .compact();
     }
 
-    public String getUserId(String token) {
+    public String getUserId(String token) 
+    {
         return claims(token).getSubject();
     }
 
-    public boolean isValid(String token) {
+    public boolean isValid(String token) 
+    {
         try { claims(token); return true; }
         catch (Exception e) { return false; }
     }
 
-    private Claims claims(String token) {
-        return Jwts.parserBuilder().setSigningKey(key()).build()
-            .parseClaimsJws(token).getBody();
+    private Claims claims(String token) 
+    {
+        return Jwts.parserBuilder()
+                .setSigningKey(key())
+                .setAllowedClockSkewSeconds(2)
+                .build()
+                .parseClaimsJws(token)
+                .getBody();
     }
 
-    public Object extractEmail(String token) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'extractEmail'");
+    public String extractEmail(String token) 
+    {
+    return claims(token).get("email", String.class);
     }
 
-    public BooleanSupplier validateToken(String token, String email) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'validateToken'");
+    public boolean validateToken(String token, String email) {
+    try {
+        Claims claims = claims(token);
+        String tokenEmail = claims.get("email", String.class);
+        return tokenEmail.equals(email) && !isExpired(claims);
+        }
+         catch (Exception e) 
+         {
+        return false;
+        }
     }
+
+    private boolean isExpired(Claims claims) 
+    {
+        return claims
+                .getExpiration()
+                .before(new Date());
+    }
+
 }
+
+        
