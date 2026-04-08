@@ -12,8 +12,7 @@ public class GenerateResponse {
     private Integer tokensUsed;
     private List<TestCaseDTO> testCases;
     private List<SuggestionDTO> suggestions;
-    @SuppressWarnings("unused")
-	private boolean fromCache;
+    private boolean fromCache;
 
     public UUID getRequestId() { return requestId; }
     public void setRequestId(UUID requestId) { this.requestId = requestId; }

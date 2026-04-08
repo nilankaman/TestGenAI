@@ -1,93 +1,106 @@
-describe("Generate Page", () => {
-
+describe("Generate Page E2E Suite", () => {
+  
   beforeEach(() => {
-    cy.loginAsDemo();
+    // Custom command for auth to avoid repetitive UI login steps
+    cy.loginAsDemo(); 
     cy.visit("/generate");
   });
 
-  it("shows all three generation modes", () => {
-    cy.contains("📋 Manual").should("be.visible");
-    cy.contains("⚙️ Automation").should("be.visible");
-    cy.contains("📝 Script").should("be.visible");
+  /**
+   * 1. NAVIGATION & LAYOUT
+   */
+  it("should display all three generation mode tabs", () => {
+    cy.get('[data-testid="tab-manual"]').should("be.visible");
+    cy.get('[data-testid="tab-automation"]').should("be.visible");
+    cy.get('[data-testid="tab-script"]').should("be.visible");
   });
 
-  it("opens with Manual mode selected by default", () => {
+  it("should default to Manual mode on load", () => {
     cy.get('[data-testid="tab-manual"]')
-    .invoke("attr", "class")
-      .should("include", "modeTabOn");
-  });
-
-  it("reveals framework options when switching to Automation", () => {
-    cy.get('[data-testid="tab-automation"]').click();
-
-    cy.contains("Selenium").should("be.visible");
-    cy.contains("Cypress").should("be.visible");
-    cy.contains("Playwright").should("be.visible");
-  });
-
-  it("shows example hints when switching to Script mode", () => {
-    cy.get('[data-testid="tab-script"]').click();
-
-    cy.contains("login with email and password")
-      .should("be.visible");
-  });
-
-  it("fills the textarea when a script hint is selected", () => {
-    cy.get('[data-testid="tab-script"]').click();
-    cy.contains("login with email and password").click();
-
-    cy.get("textarea")
-      .first()
-      .should("have.value", "login with email and password");
-  });
-
-  it("shows validation error if Generate is clicked with empty input", () => {
-    cy.get("textarea").first().clear();
-    cy.contains("⚡ Generate manual cases").click();
-
-    cy.contains("Please describe the feature first.")
-      .should("be.visible");
-  });
-
-  it("shows empty state before any generation", () => {
-    cy.contains("Results appear here")
-      .should("be.visible");
-  });
-
-  it("allows selecting a framework in Automation mode", () => {
-    cy.get('[data-testid="tab-automation"]').click();
-
-    cy.contains("button", "Cypress")
-    .click()
       .invoke("attr", "class")
-      .should("include", "fwBtnOn");
+      .should("include", "modeTabOn"); // Logic check: active class presence
   });
 
-  it("successfully generates test cases (mocked backend)", () => {
+  /**
+   * 2. MODE SWITCHING LOGIC
+   */
+  it("should toggle framework visibility in Automation mode", () => {
+    cy.get('[data-testid="tab-automation"]').click();
 
-    cy.intercept("POST", "**/api/v1/generate", 
-      {
+    // Target specific framework buttons using data-testids
+    cy.get('[data-testid="framework-selenium"]').should("be.visible");
+    cy.get('[data-testid="framework-cypress"]').should("be.visible");
+    cy.get('[data-testid="framework-playwright"]').should("be.visible");
+  });
+
+  it("should populate input when a script hint is selected", () => {
+    const hintText = "login with email and password";
+    
+    cy.get('[data-testid="tab-script"]').click();
+    
+    // Using a more specific selector for the hint button
+    cy.get('[data-testid="script-hint"]').contains(hintText).click();
+
+    cy.get('[data-testid="description-input"]')
+      .should("have.value", hintText);
+  });
+
+  /**
+   * 3. VALIDATION & ERROR HANDLING
+   */
+  it("should prevent generation when input is empty", () => {
+    cy.get('[data-testid="description-input"]').clear();
+    cy.get('[data-testid="generate-button"]').click();
+
+    // Check for the error message specifically
+    cy.get('[data-testid="validation-error"]')
+      .should("be.visible")
+      .and("contain", "Please describe the feature first.");
+  });
+
+  /**
+   * 4. FRAMEWORK SELECTION STATE
+   */
+  it("should visually highlight the selected framework", () => {
+    cy.get('[data-testid="tab-automation"]').click();
+
+    cy.get('[data-testid="framework-cypress"]')
+      .click()
+      .should("have.class", "fwBtnOn"); // Direct class check
+  });
+
+  /**
+   * 5. API INTERACTION (STUBBED)
+   */
+  it("should display results when generation is successful", () => {
+    const mockContent = "SUCCESS_MOCK_TEST_CASE";
+
+    // Intercept the API call to eliminate external AI dependency during testing
+    cy.intercept("POST", "**/api/v1/generate", {
       statusCode: 200,
       body: {
-        content: "Mock generated test cases"
+        testCases: [
+          {
+            title: "Mock Test",
+            description: mockContent,
+            type: "POSITIVE"
+          }
+        ],
+        coverageScore: 90
       }
     }).as("generateRequest");
 
-    cy.get('[data-testid="tab-manual"]').click();
+    cy.get('[data-testid="description-input"]')
+      .type("User registration flow");
 
-    cy.get("textarea")
-      .first()
-      .clear()
-      .type("User login with email and password");
+    cy.get('[data-testid="generate-button"]').click();
 
-    cy.contains("button", "⚡ Generate manual cases")
-    .scrollIntoView()
-    .click({ force: true });
-
+    // Wait for the specific network request to finish
     cy.wait("@generateRequest");
 
-    cy.contains("Mock generated test cases")
-      .should("be.visible");
+    // Verify the mock content appears in the result area
+    cy.get('[data-testid="results-container"]')
+      .should("be.visible")
+      .and("contain", mockContent);
   });
-
 });

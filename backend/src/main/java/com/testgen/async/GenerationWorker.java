@@ -9,6 +9,7 @@ import com.testgen.repository.GenerationRequestRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -18,6 +19,7 @@ import java.time.Duration;
 
 @EnableScheduling
 @Component
+@Profile("!test") // Don't run in 'test' profile to avoid interference with tests
 public class GenerationWorker {
 
     private static final Logger log = LoggerFactory.getLogger(GenerationWorker.class);

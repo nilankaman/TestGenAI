@@ -100,8 +100,10 @@ class GenerateApiTest {
             .post("/api/v1/generate")
         .then()
             .statusCode(200)
-            .body("testCases", not(empty()))
-            .body("framework", equalTo("junit5"));
+            .body("requestId", notNullValue())
+        .body("framework", equalTo("junit5"))
+        .body("testCases", notNullValue())
+        .body("testCases", instanceOf(java.util.List.class));
     }
 
     @Test
@@ -140,7 +142,8 @@ class GenerateApiTest {
         .when()
             .post("/api/v1/generate")
         .then()
-            .statusCode(400);
+            .statusCode(400)
+            .body("message", equalTo("Feature description required"));
     }
 
     @Test

@@ -9,10 +9,10 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "generation_requests")
-@Data // Automatically creates all getters, setters, toString, and equals/hashCode
-@Builder // Allows you to create objects using .builder().jobId("abc").build()
-@NoArgsConstructor // Required by JPA/Hibernate
-@AllArgsConstructor // Required by Lombok @Builder
+@Data
+@Builder 
+@NoArgsConstructor
+@AllArgsConstructor
 public class GenerationRequest {
 
     @Id

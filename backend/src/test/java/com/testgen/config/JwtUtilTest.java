@@ -14,6 +14,7 @@ class JwtUtilTest {
     void setUp() {
         jwtUtil = new JwtUtil();
         ReflectionTestUtils.setField(jwtUtil, "secret", "my-super-secret-test-key-32-chars-long-minimum");
+        ReflectionTestUtils.setField(jwtUtil, "expirationMs", 3600000L); // 1 hour
     }
 
     @Test
