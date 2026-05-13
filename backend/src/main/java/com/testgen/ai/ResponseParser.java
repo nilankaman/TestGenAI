@@ -50,7 +50,7 @@ public class ResponseParser
             int firstNewline = cleaned.indexOf('\n');
             int lastBackticks = cleaned.lastIndexOf("```");
             if (firstNewline != -1 && lastBackticks > firstNewline) {
-                cleaned = cleaned.substring(firstNewline, lastBackticks).trim();
+                cleaned = cleaned.substring(firstNewline, lastBackticks).trim(); 
             }
         }
 
